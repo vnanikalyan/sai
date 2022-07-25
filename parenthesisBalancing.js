@@ -1,17 +1,15 @@
-const input = "((hello world)"
-
-let leftParenthesisCnt = 0
-let rightParenthesisCnt = 0
+const input = "d)(('')b + ((a :-) - b :-( =)) "
+const stack = []
 
 for(const i of input) {
     if(i === '(') {
-        leftParenthesisCnt++
+        stack.push('1')
     } else if(i === ')') {
-        rightParenthesisCnt++
+        stack.pop()
     }
 }
 
-if(leftParenthesisCnt === rightParenthesisCnt) {
+if(stack.length === 0) {
     console.log('Parentheis are balanced in the given input string')
 } else {
     console.log('Parentheis are not balanced in the given input string')
